@@ -53,10 +53,25 @@ $('a.modal-btn').click(function (e) {
 });
 
 // Слайдер
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+});
 
-
-// 3D-эффекты
-
-
+// Preloader
+$(window).on('load', function() {
+    $('.preloader').fadeOut().end().delay(1000).fadeOut('slow');
+  });
 
 });

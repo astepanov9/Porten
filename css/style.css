@@ -224,6 +224,10 @@ body {
     align-items: center;
     flex: 0 1 33%;
     background-color: #191B1C;
+    transition: all 0.3s ease;
+}
+.old-2020__item:hover {
+    transform: scale(1.2);
 }
 .old-2020__item img {
     margin-bottom: 25px;
@@ -352,7 +356,7 @@ body {
 ._container {
 }
 .new-arrivals__title {
-    padding: 120px 320px;
+    padding: 10px 320px;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 36px;
@@ -380,6 +384,10 @@ body {
     margin-right: 23px;
     background-color: #191B1C;
     max-width: 230px;
+    transition: all 0.3s ease;
+}
+.new-arrivals__item:hover {
+    transform: scale(1.2);
 }
 .new-arrivals__item:nth-child(4),
 .new-arrivals__item:nth-child(8) {
@@ -621,6 +629,52 @@ body {
     top: 5px;
 }
 
+/* -----Owl-carousel----- */
+.owl-carousel .item {
+    height: 7rem;
+    background: #000;
+    padding: 1rem;
+}
+
+/* -----Preloader----- */
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: #e0e0e0;
+    z-index: 1001;
+  }
+  
+  .preloader__image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+  
+  .loaded .preloader {
+    display: none;
+  }
+
 
 
 /* -----Media----- */
@@ -753,6 +807,12 @@ body {
     }
     .categories {
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 599px) {
+    .owl-carousel .item {
+        height: 15rem;
     }
 }
 
